@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Criatório Índio Gigante</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Criatório Índio Gigante</h1>
+        <p>Conheça uma das raças de galinhas mais impressionantes do Brasil</p>
+
+        <nav>
+            <a href="index.html">HOME</a> |
+            <a href="sobre.html">SOBRE</a> |
+            <a href="portfolio.html">PORTFÓLIO</a> |
+            <a href="contato.html">CONTATO</a> |
+            <a href="login.html">LOGIN</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <h2>Login</h2>
+
+        <p>Entre com seus dados para acessar o sistema.</p>
+
+        <form onsubmit="return validarLogin()">
+
+    <p>
+        <label for="usuario">Usuário:</label><br>
+        <input type="text" id="usuario" name="usuario">
+    </p>
+
+    <p>
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senha" name="senha">
+    </p>
+<p>
+    <label for="categoria">Categoria:</label><br>
+    <select id="categoria" name="categoria">
+        <option value="">Selecione</option>
+        <option value="cliente">Cliente</option>
+        <option value="administrador">Administrador</option>
+        <option value="visitante">Visitante</option>
+    </select>
+</p>
+
+    <button type="submit">Entrar</button>
+
+</form>
+
+</main>
+            
+
+
+    <hr>
+
+    <footer>
+        <p>
+          Acadêmico: Flávio Rayaan do Nascimento Magalhães |
+RGM: 343.5020 | Polo: Cuiabá |
+Curso: Análise e Desenvolvimento de Sistemas
+        </p>
+    </footer>
+<script src="js/script.js"></script>
+</body>
+</html>
