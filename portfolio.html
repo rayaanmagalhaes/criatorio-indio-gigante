@@ -11,7 +11,11 @@
 <body>
 
     <header>
-        <h1>Criatório Índio Gigante</h1>
+        <h1>
+    <a href="index.html" class="link-logo">
+        Criatório Zói de Gato
+    </a>
+</h1>
         <p>Conheça uma das raças de galinhas mais impressionantes do Brasil</p>
 
         <nav>
@@ -117,7 +121,31 @@
     </tr>
 </table>
         </div>
+<section class="galeria-tita">
+    <h2>Galeria do Titã</h2>
+    <p>Registros do nosso Índio Gigante.</p>
 
+    <div class="galeria-profissional">
+        <img src="imagens/tita-1.jpg" onclick="abrirFoto(0)" alt="Titã">
+        <img src="imagens/tita-2.jpg" onclick="abrirFoto(1)" alt="Titã">
+        <img src="imagens/tita-3.jpg" onclick="abrirFoto(2)" alt="Titã">
+        <img src="imagens/tita-4.jpg" onclick="abrirFoto(3)" alt="Titã">
+    </div>
+</section>
+
+<div id="lightbox" class="lightbox">
+    <span class="fechar" onclick="fecharFoto()">&times;</span>
+
+    <button class="anterior" onclick="mudarFoto(-1)">&#10094;</button>
+
+    <img id="fotoGrande" src="" alt="Foto do Titã">
+
+    <button class="proxima" onclick="mudarFoto(1)">&#10095;</button>
+</div>
+   
+
+    </div>
+</section>
     </main>
 
     <hr>
@@ -129,6 +157,8 @@ RGM: 343.5020 | Polo: Cuiabá |
 Curso: Análise e Desenvolvimento de Sistemas
         </p>
     </footer>
-
+<script src="js/script.js"></script>
+</body>
+</html>
 </body>
 </html>

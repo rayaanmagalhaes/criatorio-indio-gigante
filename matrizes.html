@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Matrizes | Índio Gigante | Criatório Zói de Gato</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <style>
+        /* ===== MATRIZES ===== */
+
+        .pagina-matrizes {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255,255,255,0.94);
+            border-radius: 20px;
+        }
+
+        .titulo-matrizes {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 40px;
+        }
+
+        .matriz {
+            margin-bottom: 70px;
+            padding-bottom: 50px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .matriz:last-child {
+            border-bottom: none;
+        }
+
+        .nome-matriz {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .raca-matriz {
+            text-align: center;
+            color: #496c4b;
+            margin-bottom: 25px;
+        }
+
+        .foto-principal-matriz {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .foto-principal-matriz img {
+            width: 100%;
+            max-width: 500px;
+            max-height: 650px;
+            object-fit: contain;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+        }
+
+        .matriz h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .matriz p {
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .ficha-matriz {
+            background: #f3f3f3;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .ficha-matriz p {
+            margin: 8px 0;
+        }
+
+        /* ===== GALERIA ===== */
+
+        .galeria-matriz {
+            margin-top: 35px;
+        }
+
+        .galeria-matriz h2 {
+            text-align: center;
+        }
+
+        .fotos-matriz {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .fotos-matriz img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .fotos-matriz img:hover {
+            transform: scale(1.03);
+        }
+
+        /* ===== FOTO EM TELA CHEIA ===== */
+
+        #visualizador-matriz {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            align-items: center;
+            justify-content: center;
+        }
+
+        #foto-matriz-ampliada {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .fechar-matriz {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 45px;
+            cursor: pointer;
+            z-index: 100001;
+        }
+
+        .seta-matriz {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            font-size: 45px;
+            padding: 15px;
+            cursor: pointer;
+            z-index: 100001;
+        }
+
+        .seta-esquerda {
+            left: 15px;
+        }
+
+        .seta-direita {
+            right: 15px;
+        }
+
+        @media (max-width: 600px) {
+
+            .pagina-matrizes {
+                margin: 15px;
+                padding: 18px;
+            }
+
+            .titulo-matrizes {
+                font-size: 30px;
+            }
+
+            .nome-matriz {
+                font-size: 27px;
+            }
+
+            .fotos-matriz {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .fotos-matriz img {
+                height: 160px;
+            }
+
+            .seta-matriz {
+                font-size: 30px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<header>
+
+    <h1>
+        <a href="index.html" class="link-logo">
+            Criatório Zói de Gato
+        </a>
+    </h1>
+
+    <p>Criação, natureza e paixão pela vida no campo.</p>
+
+    <nav class="menu-principal">
+
+        <button class="botao-menu" onclick="abrirMenu()">☰</button>
+
+        <div id="menu-lateral" class="menu-lateral">
+            <a href="index.html">HOME</a>
+            <a href="sobre.html">SOBRE</a>
+            <a href="portfolio.html">PORTFÓLIO</a>
+            <a href="contato.html">CONTATO</a>
+            <a href="login.html">LOGIN</a>
+        </div>
+
+        <div class="menu-racas">
+            <a href="aves.html">AVES</a>
+            <a href="equinos.html">EQUINOS</a>
+            <a href="bovinos.html">BOVINOS</a>
+            <a href="peixes.html">PEIXES</a>
+            <a href="plantas.html">PLANTAS</a>
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main class="pagina-matrizes">
+
+    <h1 class="titulo-matrizes">MATRIZES</h1>
+
+
+    <!-- ================================================= -->
+    <!-- JÓIA -->
+    <!-- ================================================= -->
+
+    <section class="matriz">
+
+        <h1 class="nome-matriz">JÓIA</h1>
+
+        <h2 class="raca-matriz">
+            ÍNDIO GIGANTE • CRISTA BOLA
+        </h2>
+
+
+        <!-- FOTO PRINCIPAL -->
+
+        <div class="foto-principal-matriz">
+            <img
+                src="imagens/joia (1).jpeg"
+                alt="Jóia - Índio Gigante"
+                onclick="abrirFotoMatriz('joia', 0)"
+            >
+        </div>
+
+
+        <!-- APRESENTAÇÃO -->
+
+        <h2>Sobre a Jóia</h2>
+
+        <p>
+            Jóia é uma das matrizes de <strong>Índio Gigante</strong>
+            do plantel do Criatório Zói de Gato.
+        </p>
+
+        <p>
+            Da variedade <strong>Crista Bola</strong>, destaca-se pela
+            altura, estrutura corporal e características marcantes da raça.
+        </p>
+
+        <p>
+            Jóia chegou ainda pintinha e vem sendo criada e acompanhada
+            desde jovem no criatório.
+        </p>
+
+
+        <!-- FICHA -->
+
+        <h2>Ficha da Jóia</h2>
+
+        <div class="ficha-matriz">
+
+            <p>
+                📏 <strong>Altura:</strong> 86 cm
+            </p>
+
+            <p>
+                ⚖️ <strong>Peso:</strong> 3,180 kg
+            </p>
+
+            <p>
+                🐔 <strong>Raça:</strong> Índio Gigante
+            </p>
+
+            <p>
+                🧬 <strong>Característica:</strong> Crista Bola
+            </p>
+
+            <p>
+                🎂 <strong>Nascimento:</strong> 10/11/2025
+            </p>
+
+            <p>
+                📍 <strong>Origem:</strong>
+                Chácara Girassol — Santo Antônio do Leverger/MT
+            </p>
+
+        </div>
+
+
+        <!-- ORIGEM -->
+
+        <h2>Origem e História</h2>
+
+        <p>
+            Jóia nasceu em <strong>10 de novembro de 2025</strong>
+            e veio ainda pintinha da
+            <strong>Chácara Girassol, de Santo Antônio do Leverger - MT</strong>.
+        </p>
+
+        <p>
+            Desde então faz parte do plantel do Criatório Zói de Gato,
+            onde acompanhamos seu crescimento, desenvolvimento e evolução
+            como matriz da raça Índio Gigante.
+        </p>
+
+        <h2 style="text-align:center;">
+            JÓIA — 86 cm • 3,180 kg
+        </h2>
+
+
+        <!-- GALERIA JÓIA -->
+
+        <div class="galeria-matriz">
+
+            <h2>Fotos da Jóia</h2>
+
+            <div class="fotos-matriz">
+
+                <img src="imagens/joia (1).jpeg"
+                     alt="Jóia"
+                     onclick="abrirFotoMatriz('joia', 0)">
+
+                <img src="imagens/joia (2).jpeg"
+                     alt="Jóia"
+                     onclick="abrirFotoMatriz('joia', 1)">
+
+                <img src="imagens/joia (3).jpeg"
+                     alt="Jóia"
+                     onclick="abrirFotoMatriz('joia', 2)">
+
+                <img src="imagens/joia (4).jpeg"
+                     alt="Jóia"
+                     onclick="abrirFotoMatriz('joia', 3)">
+
+                <img src="imagens/joia (5).jpeg"
+                     alt="Jóia"
+                     onclick="abrirFotoMatriz('joia', 4)">
+
+                <img src="imagens/joia (6).jpeg"
+                     alt="Jóia"
+                     onclick="abrirFotoMatriz('joia', 5)">
+
+                <img src="imagens/joia (7).jpeg"
+                     alt="Jóia"
+                     onclick="abrirFotoMatriz('joia', 6)">
+
+                <img src="imagens/joia (8).jpeg"
+                     alt="Jóia"
+                     onclick="abrirFotoMatriz('joia', 7)">
+
+                <img src="imagens/joia (9).jpeg"
+                     alt="Jóia"
+                     onclick="abrirFotoMatriz('joia', 8)">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- PÉROLA -->
+    <!-- ================================================= -->
+
+    <section class="matriz">
+
+        <h1 class="nome-matriz">PÉROLA</h1>
+
+        <h2 class="raca-matriz">
+            ÍNDIO GIGANTE • CRISTA BOLA
+        </h2>
+
+
+        <!-- FOTO PRINCIPAL -->
+
+        <div class="foto-principal-matriz">
+            <img
+                src="imagens/perola (1).jpeg"
+                alt="Pérola - Índio Gigante"
+                onclick="abrirFotoMatriz('perola', 0)"
+            >
+        </div>
+
+
+        <!-- APRESENTAÇÃO -->
+
+        <h2>Sobre a Pérola</h2>
+
+        <p>
+            Pérola é uma das matrizes de <strong>Índio Gigante</strong>
+            do plantel do Criatório Zói de Gato.
+        </p>
+
+        <p>
+            Da variedade <strong>Crista Bola</strong>, apresenta boa altura,
+            estrutura e características importantes para o desenvolvimento
+            do nosso plantel.
+        </p>
+
+        <p>
+            Assim como Jóia, chegou ainda pintinha e vem sendo acompanhada
+            desde jovem no criatório.
+        </p>
+
+
+        <!-- FICHA -->
+
+        <h2>Ficha da Pérola</h2>
+
+        <div class="ficha-matriz">
+
+            <p>
+                📏 <strong>Altura:</strong> 85 cm
+            </p>
+
+            <p>
+                ⚖️ <strong>Peso:</strong> 2,840 kg
+            </p>
+
+            <p>
+                🐔 <strong>Raça:</strong> Índio Gigante
+            </p>
+
+            <p>
+                🧬 <strong>Característica:</strong> Crista Bola
+            </p>
+
+            <p>
+                🎂 <strong>Nascimento:</strong> 10/11/2025
+            </p>
+
+            <p>
+                📍 <strong>Origem:</strong>
+                Chácara Girassol — Santo Antônio do Leverger/MT
+            </p>
+
+        </div>
+
+
+        <!-- ORIGEM -->
+
+        <h2>Origem e História</h2>
+
+        <p>
+            Pérola nasceu em <strong>10 de novembro de 2025</strong>
+            e veio ainda pintinha da
+            <strong>Chácara Girassol, de Santo Antônio do Leverger - MT</strong>.
+        </p>
+
+        <p>
+            Atualmente integra o plantel de matrizes do Criatório Zói de Gato,
+            onde registramos seu desenvolvimento e evolução.
+        </p>
+
+        <h2 style="text-align:center;">
+            PÉROLA — 85 cm • 2,840 kg
+        </h2>
+
+
+        <!-- GALERIA PÉROLA -->
+
+        <div class="galeria-matriz">
+
+            <h2>Fotos da Pérola</h2>
+
+            <div class="fotos-matriz">
+
+                <img src="imagens/perola (1).jpeg"
+                     alt="Pérola"
+                     onclick="abrirFotoMatriz('perola', 0)">
+
+                <img src="imagens/perola (2).jpeg"
+                     alt="Pérola"
+                     onclick="abrirFotoMatriz('perola', 1)">
+
+                <img src="imagens/perola (3).jpeg"
+                     alt="Pérola"
+                     onclick="abrirFotoMatriz('perola', 2)">
+
+                <img src="imagens/perola (4).jpeg"
+                     alt="Pérola"
+                     onclick="abrirFotoMatriz('perola', 3)">
+
+                <img src="imagens/perola (5).jpeg"
+                     alt="Pérola"
+                     onclick="abrirFotoMatriz('perola', 4)">
+
+                <img src="imagens/perola (6).jpeg"
+                     alt="Pérola"
+                     onclick="abrirFotoMatriz('perola', 5)">
+
+                <img src="imagens/perola (7).jpeg"
+                     alt="Pérola"
+                     onclick="abrirFotoMatriz('perola', 6)">
+
+                <img src="imagens/perola (8).jpeg"
+                     alt="Pérola"
+                     onclick="abrirFotoMatriz('perola', 7)">
+
+                <img src="imagens/perola (9).jpeg"
+                     alt="Pérola"
+                     onclick="abrirFotoMatriz('perola', 8)">
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================================================= -->
+<!-- VISUALIZADOR DE FOTOS -->
+<!-- ================================================= -->
+
+<div id="visualizador-matriz">
+
+    <span class="fechar-matriz" onclick="fecharFotoMatriz()">
+        &times;
+    </span>
+
+    <button
+        class="seta-matriz seta-esquerda"
+        onclick="mudarFotoMatriz(-1)">
+        &#10094;
+    </button>
+
+    <img
+        id="foto-matriz-ampliada"
+        src=""
+        alt="Foto ampliada"
+    >
+
+    <button
+        class="seta-matriz seta-direita"
+        onclick="mudarFotoMatriz(1)">
+        &#10095;
+    </button>
+
+</div>
+
+
+<script>
+
+    /* MENU */
+
+    function abrirMenu() {
+
+        const menu = document.getElementById("menu-lateral");
+
+        if (menu) {
+            menu.classList.toggle("ativo");
+        }
+    }
+
+
+    /* =========================================
+       GALERIA DAS MATRIZES
+    ========================================= */
+
+    const fotosJoia = [
+        "imagens/joia (1).jpeg",
+        "imagens/joia (2).jpeg",
+        "imagens/joia (3).jpeg",
+        "imagens/joia (4).jpeg",
+        "imagens/joia (5).jpeg",
+        "imagens/joia (6).jpeg",
+        "imagens/joia (7).jpeg",
+        "imagens/joia (8).jpeg",
+        "imagens/joia (9).jpeg"
+    ];
+
+
+    const fotosPerola = [
+        "imagens/perola (1).jpeg",
+        "imagens/perola (2).jpeg",
+        "imagens/perola (3).jpeg",
+        "imagens/perola (4).jpeg",
+        "imagens/perola (5).jpeg",
+        "imagens/perola (6).jpeg",
+        "imagens/perola (7).jpeg",
+        "imagens/perola (8).jpeg",
+        "imagens/perola (9).jpeg"
+    ];
+
+
+    let galeriaAtual = [];
+    let fotoAtual = 0;
+
+
+    function abrirFotoMatriz(matriz, indice) {
+
+        if (matriz === "joia") {
+            galeriaAtual = fotosJoia;
+        }
+
+        if (matriz === "perola") {
+            galeriaAtual = fotosPerola;
+        }
+
+        fotoAtual = indice;
+
+        document.getElementById("foto-matriz-ampliada").src =
+            galeriaAtual[fotoAtual];
+
+        document.getElementById("visualizador-matriz").style.display =
+            "flex";
+
+        document.body.style.overflow = "hidden";
+    }
+
+
+    function fecharFotoMatriz() {
+
+        document.getElementById("visualizador-matriz").style.display =
+            "none";
+
+        document.body.style.overflow = "auto";
+    }
+
+
+    function mudarFotoMatriz(direcao) {
+
+        fotoAtual += direcao;
+
+        if (fotoAtual >= galeriaAtual.length) {
+            fotoAtual = 0;
+        }
+
+        if (fotoAtual < 0) {
+            fotoAtual = galeriaAtual.length - 1;
+        }
+
+        document.getElementById("foto-matriz-ampliada").src =
+            galeriaAtual[fotoAtual];
+    }
+
+
+    /* TECLADO */
+
+    document.addEventListener("keydown", function(event) {
+
+        const visualizador =
+            document.getElementById("visualizador-matriz");
+
+        if (visualizador.style.display !== "flex") {
+            return;
+        }
+
+        if (event.key === "ArrowRight") {
+            mudarFotoMatriz(1);
+        }
+
+        if (event.key === "ArrowLeft") {
+            mudarFotoMatriz(-1);
+        }
+
+        if (event.key === "Escape") {
+            fecharFotoMatriz();
+        }
+
+    });
+
+
+    /* FECHAR CLICANDO NO FUNDO */
+
+    document.getElementById("visualizador-matriz")
+        .addEventListener("click", function(event) {
+
+            if (event.target === this) {
+                fecharFotoMatriz();
+            }
+
+        });
+
+</script>
+
+
+</body>
+</html>

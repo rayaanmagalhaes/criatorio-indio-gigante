@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Titã | Rancho Zói de Gato</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>
+    <a href="index.html" class="link-logo">
+        Criatório Zói de Gato
+    </a>
+</h1>
+        <p>Criação, natureza e paixão pela vida no campo.</p>
+
+        <nav class="menu-principal">
+
+            <button class="botao-menu" onclick="abrirMenu()">☰</button>
+
+            <div id="menu-lateral" class="menu-lateral">
+                <a href="index.html">HOME</a>
+                <a href="sobre.html">SOBRE</a>
+                <a href="portfolio.html">PORTFÓLIO</a>
+                <a href="contato.html">CONTATO</a>
+                <a href="login.html">LOGIN</a>
+            </div>
+
+            <div class="menu-racas">
+                <a href="aves.html">AVES</a>
+                <a href="equinos.html">EQUINOS</a>
+                <a href="bovinos.html">BOVINOS</a>
+                <a href="peixes.html">PEIXES</a>
+                <a href="plantas.html">PLANTAS</a>
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main class="pagina-tita">
+
+        <!-- NOME -->
+
+        <h1 class="titulo-tita">TITÃ</h1>
+
+        <h2 style="text-align: center;">
+            ÍNDIO GIGANTE • CRISTA ERVILHA
+        </h2>
+
+
+        <!-- FOTO PRINCIPAL -->
+
+        <div class="foto-principal-tita">
+
+            <img
+                src="imagens/tita-1.jpg"
+                alt="Titã - Índio Gigante"
+                onclick="abrirFoto(0)"
+            >
+
+        </div>
+
+
+        <!-- APRESENTAÇÃO -->
+
+        <section class="informacoes-tita">
+
+            <h2>Sobre o Titã</h2>
+
+            <p>
+                Titã chegou ao <strong>Rancho Zói de Gato</strong>
+                no dia <strong>25 de setembro de 2026</strong>,
+                aos 6 meses de idade.
+            </p>
+
+            <p>
+                Mesmo ainda jovem, já chegou impressionando pelo seu
+                tamanho, peso, desenvolvimento e presença.
+            </p>
+
+
+            <!-- FICHA -->
+
+            <h2>Ficha do Titã</h2>
+
+            <p>
+                📏 <strong>Altura na chegada:</strong> 1,04 m
+            </p>
+
+            <p>
+                ⚖️ <strong>Peso na chegada:</strong> 4,830 kg
+            </p>
+
+            <p>
+                🎂 <strong>Idade na chegada:</strong> 6 meses
+            </p>
+
+            <p>
+                🐓 <strong>Raça:</strong> Índio Gigante
+            </p>
+
+            <p>
+                🧬 <strong>Característica:</strong> Crista Ervilha
+            </p>
+
+            <p>
+                📅 <strong>Chegada ao Rancho Zói de Gato:</strong>
+                25/09/2026
+            </p>
+
+
+            <!-- HISTÓRIA -->
+
+            <h2>Origem e História</h2>
+
+            <p>
+                O Titã foi adquirido do
+                <strong>Criatório Kid, de Várzea Grande - MT</strong>.
+            </p>
+
+            <p>
+                Sua origem genética vem do
+                <strong>Criatório Xavier, de Goiás</strong>,
+                através de ovos adquiridos pelo Criatório Kid,
+                dos quais nasceu o Titã.
+            </p>
+
+            <p>
+                Agora fazendo parte do plantel do Rancho Zói de Gato,
+                acompanharemos seu desenvolvimento e registraremos
+                sua evolução.
+            </p>
+
+
+            <h2>
+                TITÃ — 1,04 m e 4,830 kg aos 6 meses
+            </h2>
+
+            <p>
+                <strong>Um nome à altura do gigante!</strong> 👑
+            </p>
+
+        </section>
+
+
+        <!-- GALERIA -->
+
+        <section class="galeria-tita">
+
+            <h2>Fotos e Vídeos do Titã</h2>
+
+            <div class="fotos-tita">
+
+                <img
+                    src="imagens/tita-1.jpg"
+                    alt="Titã"
+                    onclick="abrirFoto(0)"
+                >
+
+                <img
+                    src="imagens/tita-2.jpg"
+                    alt="Titã"
+                    onclick="abrirFoto(1)"
+                >
+
+                <img
+                    src="imagens/tita-3.jpg"
+                    alt="Titã"
+                    onclick="abrirFoto(2)"
+                >
+
+                <img
+                    src="imagens/tita-4.jpg"
+                    alt="Titã"
+                    onclick="abrirFoto(3)"
+                >
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOTO EM TELA CHEIA -->
+
+    <div id="visualizador-tita" class="visualizador-tita">
+
+        <span class="fechar-tita" onclick="fecharFoto()">
+            ×
+        </span>
+
+        <button class="seta-tita esquerda"
+                onclick="mudarFoto(-1)">
+            ❮
+        </button>
+
+        <img
+            id="foto-tita-ampliada"
+            src=""
+            alt="Foto ampliada do Titã"
+        >
+
+        <button class="seta-tita direita"
+                onclick="mudarFoto(1)">
+            ❯
+        </button>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
